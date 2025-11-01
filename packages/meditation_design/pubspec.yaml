@@ -1,0 +1,17 @@
+name: meditation_design
+resolution: workspace
+description: "A new Flutter package project."
+version: 0.0.1
+
+environment:
+  sdk: ^3.10.0-162.1.beta
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^10.0.0

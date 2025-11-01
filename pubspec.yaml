@@ -1,0 +1,16 @@
+name: meditation_platform
+publish_to: none
+
+workspace:
+- applications/mobile_application
+- packages/meditation_design
+environment:
+  sdk: '^3.10.0-162.1.beta'
+
+scripts:
+  format: melos exec -- flutter format
+  clean: melos exec -- flutter clean
+  get: melos exec -- flutter pub get
+  analyze: melos exec -- flutter analyze
+  create_package:
+    run: melos exec -c 1 -- flutter create --template=package packages/${name}

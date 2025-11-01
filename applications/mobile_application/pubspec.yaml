@@ -1,0 +1,24 @@
+name: mobile_application
+resolution: workspace
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.0-162.1.beta
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  very_good_analysis: ^10.0.0
+
+flutter:
+
+  uses-material-design: true
