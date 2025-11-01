@@ -3,7 +3,7 @@ publish_to: none
 
 workspace:
 - applications/mobile_application
-- packages/meditation_kit
+- packages/silent_moon_kit
 
 environment:
   sdk: '^3.10.0-162.1.beta'
