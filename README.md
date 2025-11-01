@@ -1,1 +1,1 @@
-# meditation-platform-
+# meditation-platform
