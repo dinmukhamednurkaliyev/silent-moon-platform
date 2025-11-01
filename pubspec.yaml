@@ -1,9 +1,10 @@
-name: meditation_platform
+name: silent_moon_platform
 publish_to: none
 
 workspace:
 - applications/mobile_application
-- packages/meditation_design
+- packages/meditation_kit
+
 environment:
   sdk: '^3.10.0-162.1.beta'
 
