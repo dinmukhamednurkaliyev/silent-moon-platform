@@ -1,22 +1,25 @@
+import 'dart:async';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile_application/applicaiton.dart';
 
 void main() {
-  runApp(const Application());
-}
-
-class Application extends StatelessWidget {
-  const Application({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const Scaffold(
-        body: Text('Hi'),
-      ),
-    );
-  }
+  WidgetsFlutterBinding.ensureInitialized();
+  runZonedGuarded(
+    () {
+      runApp(const Application());
+    },
+    (Object error, StackTrace stack) {
+      if (kDebugMode) {
+        print('Caught error in runZonedGuarded: $error');
+        print(stack);
+      }
+      FlutterError.onError = (details) {
+        FlutterError.presentError(
+          details,
+        );
+      };
+    },
+  );
 }
