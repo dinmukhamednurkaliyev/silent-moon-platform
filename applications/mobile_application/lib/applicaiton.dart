@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:silent_moon_core/silent_moon_core.dart';
 
-class Application extends StatelessWidget {
-  const Application({super.key});
+class Applicaiton extends StatelessWidget {
+  const Applicaiton({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Flutter Demo',
-      home: Scaffold(
-        body: Text('Hi'),
-      ),
+    const title = 'Silent Moon';
+    const home = Scaffold();
+    const debugShowCheckedModeBanner = false;
+    return MaterialApp(
+      title: title,
+      debugShowCheckedModeBanner: debugShowCheckedModeBanner,
+      home: home,
+      theme: SilentMoonTheme.light,
+      darkTheme: SilentMoonTheme.dark,
     );
   }
 }

@@ -8,7 +8,7 @@ void main() {
   runZonedGuarded(
     () {
       WidgetsFlutterBinding.ensureInitialized();
-      runApp(const Application());
+      runApp(const Applicaiton());
     },
     (Object error, StackTrace stack) {
       if (kDebugMode) {

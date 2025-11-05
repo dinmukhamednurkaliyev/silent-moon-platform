@@ -1,7 +1,7 @@
-export 'presentation/assets/assets.dart';
-export 'presentation/extensions/build_context_extension.dart'
+export 'assets/assets.dart' show SilentMoonIcons;
+export 'extensions/build_context_extension.dart'
     show SilentMoonBuildContextExtension;
-export 'presentation/extensions/media_query_extensions.dart'
-    show SilentMoonMediaExtensions;
-export 'presentation/tokens/color.dart';
-export 'presentation/widgets/text_field.dart';
+export 'extensions/media_query_extensions.dart' show SilentMoonMediaExtensions;
+export 'theme.dart' show SilentMoonTheme;
+export 'tokens/color.dart' show SilentMoonSemanticColor;
+export 'widgets/text_field.dart';

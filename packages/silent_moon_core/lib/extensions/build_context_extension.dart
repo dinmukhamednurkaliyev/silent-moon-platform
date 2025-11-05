@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:silent_moon_core/presentation/tokens/animation.dart';
-import 'package:silent_moon_core/presentation/tokens/icon.dart';
-import 'package:silent_moon_core/presentation/tokens/padding.dart';
-import 'package:silent_moon_core/presentation/tokens/shape.dart';
-import 'package:silent_moon_core/presentation/tokens/spacing.dart';
-import 'package:silent_moon_core/presentation/tokens/text.dart';
+import 'package:silent_moon_core/tokens/animation.dart';
+import 'package:silent_moon_core/tokens/icon.dart';
+import 'package:silent_moon_core/tokens/padding.dart';
+import 'package:silent_moon_core/tokens/shape.dart';
+import 'package:silent_moon_core/tokens/spacing.dart';
+import 'package:silent_moon_core/tokens/text.dart';
 
 extension SilentMoonBuildContextExtension on BuildContext {
   ThemeData get theme => Theme.of(this);
@@ -39,41 +39,41 @@ extension SilentMoonBuildContextExtension on BuildContext {
     ),
 
     size: (
-      min: 0.0,
-      tight: 10.0,
-      low: 12.0,
-      base: 14.0,
-      mid: 16.0,
-      high: 20.0,
-      wide: 24.0,
-      loose: 32.0,
-      max: 48.0,
+      min: SilentMoonTextSize.min,
+      tight: SilentMoonTextSize.tight,
+      low: SilentMoonTextSize.low,
+      base: SilentMoonTextSize.base,
+      mid: SilentMoonTextSize.mid,
+      high: SilentMoonTextSize.high,
+      wide: SilentMoonTextSize.wide,
+      loose: SilentMoonTextSize.loose,
+      max: SilentMoonTextSize.max,
     ),
 
     weight: (
-      thin: FontWeight.w100,
-      extraLight: FontWeight.w200,
-      light: FontWeight.w300,
-      normal: FontWeight.w400,
-      medium: FontWeight.w500,
-      semiBold: FontWeight.w600,
-      bold: FontWeight.w700,
-      extraBold: FontWeight.w800,
-      black: FontWeight.w900,
+      thin: SilentMoonTextWeight.thin,
+      extraLight: SilentMoonTextWeight.extraLight,
+      light: SilentMoonTextWeight.light,
+      normal: SilentMoonTextWeight.normal,
+      medium: SilentMoonTextWeight.medium,
+      semiBold: SilentMoonTextWeight.semiBold,
+      bold: SilentMoonTextWeight.bold,
+      extraBold: SilentMoonTextWeight.extraBold,
+      black: SilentMoonTextWeight.black,
     ),
   );
 
   SpacingContext get spacing => (
     size: (
-      min: 0.0,
-      tight: 4.0,
-      low: 8.0,
-      base: 12.0,
-      mid: 16.0,
-      high: 24.0,
-      wide: 32.0,
-      loose: 48.0,
-      max: 64.0,
+      min: SilentMoonSpacingSize.min,
+      tight: SilentMoonSpacingSize.tight,
+      low: SilentMoonSpacingSize.low,
+      base: SilentMoonSpacingSize.base,
+      mid: SilentMoonSpacingSize.mid,
+      high: SilentMoonSpacingSize.high,
+      wide: SilentMoonSpacingSize.wide,
+      loose: SilentMoonSpacingSize.loose,
+      max: SilentMoonSpacingSize.max,
     ),
   );
 
