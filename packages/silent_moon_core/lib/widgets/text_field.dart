@@ -20,7 +20,7 @@ class SilentMoonTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeStyle = Theme.of(
       context,
-    ).extension<SilentMoonTextFieldTheme>()?.style;
+    ).extension<SilentMoonTextFieldTheme>()?.defaultStyle;
 
     final effectiveStyle =
         themeStyle?.copyWith(
@@ -117,17 +117,17 @@ class SilentMoonTextFieldStyle {
 class SilentMoonTextFieldTheme
     extends ThemeExtension<SilentMoonTextFieldTheme> {
   const SilentMoonTextFieldTheme({
-    this.style,
+    this.defaultStyle,
   });
 
-  final SilentMoonTextFieldStyle? style;
+  final SilentMoonTextFieldStyle? defaultStyle;
 
   @override
   ThemeExtension<SilentMoonTextFieldTheme> copyWith({
-    SilentMoonTextFieldStyle? style,
+    SilentMoonTextFieldStyle? defaultStyle,
   }) {
     return SilentMoonTextFieldTheme(
-      style: style ?? this.style,
+      defaultStyle: defaultStyle ?? this.defaultStyle,
     );
   }
 
@@ -140,7 +140,11 @@ class SilentMoonTextFieldTheme
       return this;
     }
     return SilentMoonTextFieldTheme(
-      style: SilentMoonTextFieldStyle.lerp(style, other.style, t),
+      defaultStyle: SilentMoonTextFieldStyle.lerp(
+        defaultStyle,
+        other.defaultStyle,
+        t,
+      ),
     );
   }
 }

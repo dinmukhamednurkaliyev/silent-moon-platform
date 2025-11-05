@@ -20,4 +20,11 @@ flutter:
   uses-material-design: true
   assets:
   - assets/icons/
-  - assets/fonts/
+
+  fonts:
+    - family: HelveticaNeue
+      fonts:
+        - asset: assets/fonts/HelveticaNeueLight.otf
+        - asset: assets/fonts/HelveticaNeueMedium.otf
+        - asset: assets/fonts/HelveticaNeueBold.otf
+        - asset: assets/fonts/HelveticaNeueThin.otf

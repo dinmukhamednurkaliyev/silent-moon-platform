@@ -47,8 +47,10 @@ class SilentMoonTheme {
       tertiary: tertiary,
       onTertiary: onTertiary,
     );
+    const extensions = <ThemeExtension<dynamic>>[];
     return ThemeData(
       colorScheme: colorScheme,
+      extensions: extensions,
     );
   }
 }
