@@ -5,6 +5,12 @@ typedef AnimationContext = ({
   AnimationCurveContext curve,
 });
 
+typedef AnimationCurveContext = ({
+  Curve standard,
+  Curve accelerate,
+  Curve decelerate,
+});
+
 typedef AnimationDurationContext = ({
   Duration shortest,
   Duration short,
@@ -13,14 +19,15 @@ typedef AnimationDurationContext = ({
   Duration longest,
 });
 
-typedef AnimationCurveContext = ({
-  Curve standard,
-  Curve accelerate,
-  Curve decelerate,
-});
-
 class SilentMoonAnimation {
   const SilentMoonAnimation();
+}
+
+class SilentMoonAnimationCurve {
+  const SilentMoonAnimationCurve();
+  static const Curve standard = Curves.easeInOut;
+  static const Curve accelerate = Curves.easeIn;
+  static const Curve decelerate = Curves.easeOut;
 }
 
 class SilentMoonAnimationDuration {
@@ -30,11 +37,4 @@ class SilentMoonAnimationDuration {
   static const Duration medium = Duration(milliseconds: 300);
   static const Duration long = Duration(milliseconds: 500);
   static const Duration longest = Duration(milliseconds: 800);
-}
-
-class SilentMoonAnimationCurve {
-  const SilentMoonAnimationCurve();
-  static const Curve standard = Curves.easeInOut;
-  static const Curve accelerate = Curves.easeIn;
-  static const Curve decelerate = Curves.easeOut;
 }

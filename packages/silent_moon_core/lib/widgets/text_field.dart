@@ -1,16 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:silent_moon_core/tokens/padding.dart';
 
-final silentMoonFieldStyle = SilentMoonTextFieldStyle(
+final textFieldDefaultStyle = SilentMoonTextFieldStyle(
   contentPadding: const EdgeInsets.symmetric(
     horizontal: SilentMoonPaddingSize.mid,
   ),
   border: WidgetStateProperty.all(InputBorder.none),
 );
 
+final SilentMoonTextFieldStyle textFieldemailStyle = textFieldDefaultStyle
+    .copyWith(
+      suffixIcon: const Icon(Icons.mail),
+    );
+
+final SilentMoonTextFieldStyle textFieldpasswordStyle = textFieldDefaultStyle
+    .copyWith(
+      suffixIcon: const Icon(Icons.lock),
+    );
+
 class SilentMoonTextField extends StatelessWidget {
   const SilentMoonTextField({
     super.key,
+    this.type = SilentMoonTextFieldType.defaultType,
     this.controller,
     this.keyboardType,
     this.obscureText = false,
@@ -25,44 +36,49 @@ class SilentMoonTextField extends StatelessWidget {
   final bool obscureText;
   final String? hintText;
   final SilentMoonTextFieldStyle? style;
+  final SilentMoonTextFieldType type;
   final Widget? suffixIcon;
   final VoidCallback? onSuffixIconPressed;
 
   @override
   Widget build(BuildContext context) {
-    final themeStyle = Theme.of(
-      context,
-    ).extension<SilentMoonTextFieldTheme>()?.defaultStyle;
+    final myTheme = Theme.of(context).extension<SilentMoonTextFieldTheme>();
 
-    final effectiveStyle =
-        themeStyle?.copyWith(
-          surfaceColor: style?.surfaceColor,
-          textStyle: style?.textStyle,
-          hintStyle: style?.hintStyle,
-          border: style?.border,
-          contentPadding: style?.contentPadding,
-          suffixIcon: style?.suffixIcon,
-        ) ??
-        style;
+    final themeStyle = switch (type) {
+      SilentMoonTextFieldType.defaultType => myTheme?.defaultStyle,
+      SilentMoonTextFieldType.emailType => myTheme?.emailStyle,
+      SilentMoonTextFieldType.passwordType => myTheme?.passwordStyle,
+    };
 
-    final finalSuffixIcon = suffixIcon ?? effectiveStyle?.suffixIcon;
+    final baseStyle = themeStyle ?? const SilentMoonTextFieldStyle();
+
+    final effectiveStyle = baseStyle.copyWith(
+      surfaceColor: style?.surfaceColor,
+      textStyle: style?.textStyle,
+      hintStyle: style?.hintStyle,
+      border: style?.border,
+      contentPadding: style?.contentPadding,
+      suffixIcon: style?.suffixIcon,
+    );
+
+    final finalSuffixIcon = suffixIcon ?? effectiveStyle.suffixIcon;
 
     return TextField(
       controller: controller,
       keyboardType: keyboardType,
       obscureText: obscureText,
-      style: effectiveStyle?.textStyle,
+      style: effectiveStyle.textStyle,
       decoration: InputDecoration(
-        contentPadding: effectiveStyle?.contentPadding,
+        contentPadding: effectiveStyle.contentPadding,
         filled: true,
-        fillColor: effectiveStyle?.surfaceColor?.resolve(
+        fillColor: effectiveStyle.surfaceColor?.resolve(
           {},
-        ), //
+        ),
         hintText: hintText,
-        hintStyle: effectiveStyle?.hintStyle,
-        border: effectiveStyle?.border?.resolve({}),
-        enabledBorder: effectiveStyle?.border?.resolve({}),
-        focusedBorder: effectiveStyle?.border?.resolve({
+        hintStyle: effectiveStyle.hintStyle,
+        border: effectiveStyle.border?.resolve({}),
+        enabledBorder: effectiveStyle.border?.resolve({}),
+        focusedBorder: effectiveStyle.border?.resolve({
           WidgetState.focused,
         }),
         suffixIcon: finalSuffixIcon != null
@@ -152,16 +168,24 @@ class SilentMoonTextFieldTheme
     extends ThemeExtension<SilentMoonTextFieldTheme> {
   const SilentMoonTextFieldTheme({
     this.defaultStyle,
+    this.emailStyle,
+    this.passwordStyle,
   });
 
   final SilentMoonTextFieldStyle? defaultStyle;
+  final SilentMoonTextFieldStyle? emailStyle;
+  final SilentMoonTextFieldStyle? passwordStyle;
 
   @override
   ThemeExtension<SilentMoonTextFieldTheme> copyWith({
     SilentMoonTextFieldStyle? defaultStyle,
+    SilentMoonTextFieldStyle? emailStyle,
+    SilentMoonTextFieldStyle? passwordStyle,
   }) {
     return SilentMoonTextFieldTheme(
       defaultStyle: defaultStyle ?? this.defaultStyle,
+      emailStyle: emailStyle ?? this.emailStyle,
+      passwordStyle: passwordStyle ?? this.passwordStyle,
     );
   }
 
@@ -179,6 +203,22 @@ class SilentMoonTextFieldTheme
         other.defaultStyle,
         t,
       ),
+      emailStyle: SilentMoonTextFieldStyle.lerp(
+        emailStyle,
+        other.emailStyle,
+        t,
+      ),
+      passwordStyle: SilentMoonTextFieldStyle.lerp(
+        passwordStyle,
+        other.passwordStyle,
+        t,
+      ),
     );
   }
+}
+
+enum SilentMoonTextFieldType {
+  defaultType,
+  emailType,
+  passwordType,
 }

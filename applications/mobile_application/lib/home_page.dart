@@ -7,17 +7,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SilentMoonScaffold(
-      body: Column(
-        children: [
-          Text('data'),
-          SilentMoonTextField(
-            hintText: 'Email',
-          ),
-          SilentMoonTextField(
-            hintText: 'Password',
-          ),
-        ],
-      ),
+      body: Column(),
     );
   }
 }

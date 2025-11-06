@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:silent_moon_core/tokens/color.dart';
+import 'package:silent_moon_core/widgets/button.dart';
 import 'package:silent_moon_core/widgets/text_field.dart';
 
 class SilentMoonTheme {
@@ -49,7 +50,12 @@ class SilentMoonTheme {
       onTertiary: onTertiary,
     );
     final extensions = <ThemeExtension<dynamic>>[
-      SilentMoonTextFieldTheme(defaultStyle: silentMoonFieldStyle),
+      SilentMoonTextFieldTheme(
+        defaultStyle: textFieldDefaultStyle,
+        emailStyle: textFieldemailStyle,
+        passwordStyle: textFieldpasswordStyle,
+      ),
+      const SilentMoonButtonTheme(defaultStyle: buttonDefaultStyle),
     ];
     return ThemeData(
       colorScheme: colorScheme,
