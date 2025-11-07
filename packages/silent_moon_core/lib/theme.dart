@@ -55,7 +55,7 @@ class SilentMoonTheme {
         emailStyle: textFieldemailStyle,
         passwordStyle: textFieldpasswordStyle,
       ),
-      const SilentMoonButtonTheme(defaultStyle: buttonDefaultStyle),
+      SilentMoonButtonTheme(defaultStyle: buttonDefaultStyle),
     ];
     return ThemeData(
       colorScheme: colorScheme,

@@ -1,8 +1,22 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:silent_moon_core/tokens/color.dart';
+import 'package:silent_moon_core/tokens/shape.dart';
 
-const buttonDefaultStyle = SilentMoonButtonStyle();
+final buttonDefaultStyle = SilentMoonButtonStyle(
+  backgroundColor: WidgetStateProperty.all(
+    SilentMoonSemanticColor.primary.main,
+  ),
+  foregroundColor: WidgetStateProperty.all(
+    SilentMoonSemanticColor.primary.on,
+  ),
+  shape: WidgetStateProperty.all(
+    RoundedRectangleBorder(
+      borderRadius: SilentMoonShapeRadius.loose,
+    ),
+  ),
+);
 
 class SilentMoonButton extends StatelessWidget {
   const SilentMoonButton({
