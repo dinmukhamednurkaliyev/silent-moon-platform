@@ -1,17 +1,15 @@
-import 'package:flutter/material.dart';
-
 typedef ShapeContext = ({ShapeRadiusContext radius});
 
 typedef ShapeRadiusContext = ({
-  BorderRadius min,
-  BorderRadius tight,
-  BorderRadius low,
-  BorderRadius base,
-  BorderRadius mid,
-  BorderRadius high,
-  BorderRadius wide,
-  BorderRadius loose,
-  BorderRadius max,
+  double min,
+  double tight,
+  double low,
+  double base,
+  double mid,
+  double high,
+  double wide,
+  double loose,
+  double max,
 });
 
 abstract class SilentMoonShape {
@@ -20,13 +18,13 @@ abstract class SilentMoonShape {
 
 abstract class SilentMoonShapeRadius {
   const SilentMoonShapeRadius();
-  static const BorderRadius min = BorderRadius.zero;
-  static final BorderRadius tight = BorderRadius.circular(2);
-  static final BorderRadius low = BorderRadius.circular(4);
-  static final BorderRadius base = BorderRadius.circular(8);
-  static final BorderRadius mid = BorderRadius.circular(12);
-  static final BorderRadius high = BorderRadius.circular(16);
-  static final BorderRadius wide = BorderRadius.circular(24);
-  static final BorderRadius loose = BorderRadius.circular(32);
-  static final BorderRadius max = BorderRadius.circular(999);
+  static const double min = 0;
+  static const double tight = 2;
+  static const double low = 4;
+  static const double base = 8;
+  static const double mid = 12;
+  static const double high = 16;
+  static const double wide = 24;
+  static const double loose = 32;
+  static const double max = 999;
 }

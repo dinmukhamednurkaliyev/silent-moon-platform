@@ -12,6 +12,22 @@ typedef IconSizeContext = ({
   double max,
 });
 
+class SilentMoonIcon {
+  const SilentMoonIcon._();
+
+  static const facebook =
+      'packages/silent_moon_core/assets/icons/facebook_icon.svg';
+
+  static const google =
+      'packages/silent_moon_core/assets/icons/google_icon.svg';
+
+  static const logoDark =
+      'packages/silent_moon_core/assets/icons/logo_dark.svg';
+
+  static const logoLight =
+      'packages/silent_moon_core/assets/icons/logo_light.svg';
+}
+
 abstract class SilentMoonIconSize {
   const SilentMoonIconSize();
   static const double min = 12;

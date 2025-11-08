@@ -58,7 +58,7 @@ class SilentMoonTheme {
       colorScheme: colorScheme,
       extensions: extensions,
       textTheme: textTheme,
-      fontFamily: SilentMoonFontFamilyAsset.helveticaNeue,
+      fontFamily: SilentMoonFontFamily.helveticaNeue,
     );
   }
 
@@ -69,7 +69,7 @@ class SilentMoonTheme {
         foregroundColor: WidgetStateProperty.all(colorScheme.onPrimary),
         shape: WidgetStateProperty.all(
           RoundedRectangleBorder(
-            borderRadius: SilentMoonShapeRadius.loose,
+            borderRadius: BorderRadius.circular(SilentMoonShapeRadius.loose),
           ),
         ),
       ),
