@@ -6,9 +6,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SilentMoonScaffold(
+    return const SilentMoonScaffold(
       body: Column(
-        children: [SilentMoonButton(onPressed: () {}, text: 'text')],
+        children: [],
       ),
     );
   }

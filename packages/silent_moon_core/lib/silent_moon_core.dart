@@ -1,4 +1,4 @@
-export 'assets/assets.dart' show SilentMoonIcons;
+export 'assets/assets.dart';
 export 'extensions/build_context_extension.dart'
     show SilentMoonBuildContextExtension;
 export 'extensions/media_query_extensions.dart' show SilentMoonMediaExtensions;
