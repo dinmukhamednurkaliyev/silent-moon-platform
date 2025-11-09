@@ -4,22 +4,25 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_application/applicaiton.dart';
 
-void main() {
-  runZonedGuarded(
-    () {
+Future<void> main() async {
+  FlutterError.onError = (details) {
+    FlutterError.presentError(details);
+    if (kDebugMode) {
+      print('Flutter error: ${details.exception}');
+    }
+  };
+
+  await runZonedGuarded(
+    () async {
       WidgetsFlutterBinding.ensureInitialized();
-      runApp(const Applicaiton());
+
+      runApp(const Application());
     },
     (Object error, StackTrace stack) {
       if (kDebugMode) {
         print('Caught error in runZonedGuarded: $error');
         print(stack);
       }
-      FlutterError.onError = (details) {
-        FlutterError.presentError(
-          details,
-        );
-      };
     },
   );
 }

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_application/home_page.dart';
+import 'package:mobile_application/onboarding/onboarding_page.dart';
 import 'package:silent_moon_design/silent_moon_design.dart';
 
-class Applicaiton extends StatelessWidget {
-  const Applicaiton({
+class Application extends StatelessWidget {
+  const Application({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     const title = 'Silent Moon';
-    const home = HomePage();
+    const home = OnboardingPage();
     const debugShowCheckedModeBanner = false;
     final theme = SilentMoonTheme.light;
     final darkTheme = SilentMoonTheme.dark;

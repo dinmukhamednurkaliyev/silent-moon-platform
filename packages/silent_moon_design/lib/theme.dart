@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:silent_moon_design/silent_moon_design.dart';
-import 'package:silent_moon_design/tokens/padding.dart';
-import 'package:silent_moon_design/tokens/shape.dart';
+import 'package:silent_moon_design/silent_moon.dart';
 
 class SilentMoonTheme {
   const SilentMoonTheme._();
@@ -11,126 +9,89 @@ class SilentMoonTheme {
 
   static ThemeData _build(Brightness brightness) {
     final colorScheme = ColorScheme.fromSeed(
-      seedColor: SilentMoonSemanticColor.primary.main,
+      seedColor: SilentMoon.color.semantic.primary.main,
       brightness: brightness,
-      primary: SilentMoonSemanticColor.primary.main,
-      onPrimary: SilentMoonSemanticColor.primary.on,
-      secondary: SilentMoonSemanticColor.secondary.main,
-      onSecondary: SilentMoonSemanticColor.secondary.on,
-      tertiary: SilentMoonSemanticColor.tertiary.main,
-      onTertiary: SilentMoonSemanticColor.tertiary.on,
+      primary: SilentMoon.color.semantic.primary.main,
+      onPrimary: SilentMoon.color.semantic.primary.on,
+      secondary: SilentMoon.color.semantic.secondary.main,
+      onSecondary: SilentMoon.color.semantic.secondary.on,
+      tertiary: SilentMoon.color.semantic.tertiary.main,
+      onTertiary: SilentMoon.color.semantic.tertiary.on,
     );
 
-    const textTheme = TextTheme(
+    final textTheme = TextTheme(
       displayLarge: TextStyle(
-        fontSize: SilentMoonFontSize.max,
-        fontWeight: SilentMoonFontWeight.extraBold,
+        fontSize: SilentMoon.font.size.max,
+        fontWeight: SilentMoon.font.weight.extraBold,
       ),
       displayMedium: TextStyle(
-        fontSize: SilentMoonFontSize.loose,
-        fontWeight: SilentMoonFontWeight.bold,
+        fontSize: SilentMoon.font.size.loose,
+        fontWeight: SilentMoon.font.weight.bold,
       ),
       displaySmall: TextStyle(
-        fontSize: SilentMoonFontSize.wide,
-        fontWeight: SilentMoonFontWeight.semiBold,
+        fontSize: SilentMoon.font.size.wide,
+        fontWeight: SilentMoon.font.weight.semiBold,
       ),
 
       headlineLarge: TextStyle(
-        fontSize: SilentMoonFontSize.high,
-        fontWeight: SilentMoonFontWeight.semiBold,
+        fontSize: SilentMoon.font.size.high,
+        fontWeight: SilentMoon.font.weight.semiBold,
       ),
       headlineMedium: TextStyle(
-        fontSize: SilentMoonFontSize.mid,
-        fontWeight: SilentMoonFontWeight.semiBold,
+        fontSize: SilentMoon.font.size.mid,
+        fontWeight: SilentMoon.font.weight.semiBold,
       ),
       headlineSmall: TextStyle(
-        fontSize: SilentMoonFontSize.base,
-        fontWeight: SilentMoonFontWeight.medium,
+        fontSize: SilentMoon.font.size.base,
+        fontWeight: SilentMoon.font.weight.medium,
       ),
 
       titleLarge: TextStyle(
-        fontSize: SilentMoonFontSize.high,
-        fontWeight: SilentMoonFontWeight.medium,
+        fontSize: SilentMoon.font.size.high,
+        fontWeight: SilentMoon.font.weight.medium,
       ),
       titleMedium: TextStyle(
-        fontSize: SilentMoonFontSize.mid,
-        fontWeight: SilentMoonFontWeight.medium,
+        fontSize: SilentMoon.font.size.mid,
+        fontWeight: SilentMoon.font.weight.medium,
       ),
       titleSmall: TextStyle(
-        fontSize: SilentMoonFontSize.low,
-        fontWeight: SilentMoonFontWeight.medium,
+        fontSize: SilentMoon.font.size.low,
+        fontWeight: SilentMoon.font.weight.medium,
       ),
 
       bodyLarge: TextStyle(
-        fontSize: SilentMoonFontSize.mid,
-        fontWeight: SilentMoonFontWeight.normal,
+        fontSize: SilentMoon.font.size.mid,
+        fontWeight: SilentMoon.font.weight.normal,
       ),
       bodyMedium: TextStyle(
-        fontSize: SilentMoonFontSize.base,
-        fontWeight: SilentMoonFontWeight.normal,
+        fontSize: SilentMoon.font.size.base,
+        fontWeight: SilentMoon.font.weight.normal,
       ),
       bodySmall: TextStyle(
-        fontSize: SilentMoonFontSize.low,
-        fontWeight: SilentMoonFontWeight.normal,
+        fontSize: SilentMoon.font.size.low,
+        fontWeight: SilentMoon.font.weight.normal,
       ),
 
       labelLarge: TextStyle(
-        fontSize: SilentMoonFontSize.base,
-        fontWeight: SilentMoonFontWeight.semiBold,
+        fontSize: SilentMoon.font.size.base,
+        fontWeight: SilentMoon.font.weight.semiBold,
       ),
       labelMedium: TextStyle(
-        fontSize: SilentMoonFontSize.low,
-        fontWeight: SilentMoonFontWeight.semiBold,
+        fontSize: SilentMoon.font.size.low,
+        fontWeight: SilentMoon.font.weight.semiBold,
       ),
       labelSmall: TextStyle(
-        fontSize: SilentMoonFontSize.tight,
-        fontWeight: SilentMoonFontWeight.medium,
+        fontSize: SilentMoon.font.size.tight,
+        fontWeight: SilentMoon.font.weight.medium,
       ),
     );
 
-    const fontFamily = SilentMoonFontFamily.helveticaNeue;
+    final fontFamily = SilentMoon.font.fontFamily;
     return ThemeData(
       colorScheme: colorScheme,
       fontFamily: fontFamily,
       textTheme: textTheme,
-      extensions: [
-        _buildTextFieldTheme(),
-        _buildButtonTheme(colorScheme),
-      ],
-    );
-  }
-
-  static SilentMoonButtonTheme _buildButtonTheme(ColorScheme colorScheme) {
-    return SilentMoonButtonTheme(
-      defaultStyle: SilentMoonButtonStyle(
-        backgroundColor: WidgetStatePropertyAll(colorScheme.primary),
-        foregroundColor: WidgetStatePropertyAll(colorScheme.onPrimary),
-        textStyle: const WidgetStatePropertyAll(TextStyle()),
-        shape: WidgetStatePropertyAll(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(SilentMoonShapeRadius.loose),
-          ),
-        ),
-      ),
-    );
-  }
-
-  static SilentMoonTextFieldTheme _buildTextFieldTheme() {
-    final baseStyle = SilentMoonTextFieldStyle(
-      contentPadding: const EdgeInsets.symmetric(
-        horizontal: SilentMoonPaddingSize.mid,
-      ),
-      border: WidgetStateProperty.all(InputBorder.none),
-    );
-
-    return SilentMoonTextFieldTheme(
-      defaultStyle: baseStyle,
-      emailStyle: baseStyle.copyWith(
-        suffixIcon: const Icon(Icons.mail),
-      ),
-      passwordStyle: baseStyle.copyWith(
-        suffixIcon: const Icon(Icons.lock),
-      ),
+      extensions: const [],
     );
   }
 }
