@@ -54,7 +54,7 @@ class _SocialMediaColors {
   );
 
   SilentMoonColorScheme get google => const SilentMoonColorScheme(
-    main: Color(0xFFEBEAEC),
+    main: Color(0xFFFFFFFF),
     on: Color(0xFF3F414E),
   );
 }

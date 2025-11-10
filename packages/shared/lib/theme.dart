@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared/extensions/extensions.dart';
 import 'package:shared/silent_moon.dart';
 import 'package:shared/widgets/widgets.dart';
@@ -132,6 +133,32 @@ class SilentMoonTheme {
               ),
               foregroundColor: WidgetStateProperty.all(
                 SilentMoon.color.semantic.primary.on,
+              ),
+            ),
+            facebook: SilentMoonButtonStyle(
+              backgroundColor: WidgetStateProperty.all(
+                SilentMoon.color.social.facebook.main,
+              ),
+              foregroundColor: WidgetStateProperty.all(
+                SilentMoon.color.social.facebook.on,
+              ),
+              leadingIcon: SvgPicture.asset(
+                SilentMoon.icon.social.facebook,
+                height: 20,
+                width: 20,
+              ),
+            ),
+            google: SilentMoonButtonStyle(
+              backgroundColor: WidgetStateProperty.all(
+                SilentMoon.color.social.google.main,
+              ),
+              leadingIcon: SvgPicture.asset(
+                SilentMoon.icon.social.google,
+                height: 20,
+                width: 20,
+              ),
+              foregroundColor: WidgetStateProperty.all(
+                SilentMoon.color.social.google.on,
               ),
             ),
           ),

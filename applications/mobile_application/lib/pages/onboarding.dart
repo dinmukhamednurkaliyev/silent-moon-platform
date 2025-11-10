@@ -17,6 +17,16 @@ class OnboardingPage extends StatelessWidget {
             onPressed: () {},
             child: const Text('SIGN UP'),
           ),
+          SilentMoonButton.facebook(
+            context: context,
+            onPressed: () {},
+            child: const Text('SIGN UP'),
+          ),
+          SilentMoonButton.google(
+            context: context,
+            onPressed: () {},
+            child: const Text('SIGN UP'),
+          ),
         ],
       ),
     );

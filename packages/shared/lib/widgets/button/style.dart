@@ -11,6 +11,7 @@ class SilentMoonButtonStyle {
     this.padding,
     this.shape,
     this.minimumSize,
+    this.leadingIcon,
   });
 
   final WidgetStateProperty<TextStyle?>? textStyle;
@@ -21,6 +22,7 @@ class SilentMoonButtonStyle {
   final WidgetStateProperty<EdgeInsetsGeometry?>? padding;
   final WidgetStateProperty<OutlinedBorder?>? shape;
   final WidgetStateProperty<Size?>? minimumSize;
+  final Widget? leadingIcon;
 
   SilentMoonButtonStyle copyWith({
     WidgetStateProperty<TextStyle?>? textStyle,
@@ -31,6 +33,7 @@ class SilentMoonButtonStyle {
     WidgetStateProperty<EdgeInsetsGeometry?>? padding,
     WidgetStateProperty<OutlinedBorder?>? shape,
     WidgetStateProperty<Size?>? minimumSize,
+    Widget? leadingIcon,
   }) {
     return SilentMoonButtonStyle(
       textStyle: textStyle ?? this.textStyle,
@@ -41,6 +44,7 @@ class SilentMoonButtonStyle {
       padding: padding ?? this.padding,
       shape: shape ?? this.shape,
       minimumSize: minimumSize ?? this.minimumSize,
+      leadingIcon: leadingIcon ?? this.leadingIcon,
     );
   }
 
@@ -58,6 +62,7 @@ class SilentMoonButtonStyle {
       padding: t < 0.5 ? padding : other.padding,
       shape: t < 0.5 ? shape : other.shape,
       minimumSize: t < 0.5 ? minimumSize : other.minimumSize,
+      leadingIcon: t < 0.5 ? leadingIcon : other.leadingIcon,
     );
   }
 }

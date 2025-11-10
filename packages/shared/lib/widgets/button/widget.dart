@@ -3,6 +3,58 @@ import 'package:shared/extensions/widget_theme.dart';
 import 'package:shared/widgets/button/style.dart';
 
 class SilentMoonButton extends StatelessWidget {
+  factory SilentMoonButton.facebook({
+    required BuildContext context,
+    required VoidCallback? onPressed,
+    required Widget child,
+    bool isLoading = false,
+    Key? key,
+  }) {
+    final themeExtension = Theme.of(
+      context,
+    ).extension<SilentMoonWidgetThemeExtension>();
+
+    if (themeExtension == null) {
+      throw FlutterError('SilentMoonWidgetThemeExtension not found in theme.');
+    }
+
+    final style = themeExtension.button.facebook;
+
+    return SilentMoonButton._(
+      style: style,
+      onPressed: onPressed,
+      isLoading: isLoading,
+      key: key,
+      child: child,
+    );
+  }
+
+  factory SilentMoonButton.google({
+    required BuildContext context,
+    required VoidCallback? onPressed,
+    required Widget child,
+    bool isLoading = false,
+    Key? key,
+  }) {
+    final themeExtension = Theme.of(
+      context,
+    ).extension<SilentMoonWidgetThemeExtension>();
+
+    if (themeExtension == null) {
+      throw FlutterError('SilentMoonWidgetThemeExtension not found in theme.');
+    }
+
+    final style = themeExtension.button.google;
+
+    return SilentMoonButton._(
+      style: style,
+      onPressed: onPressed,
+      isLoading: isLoading,
+      key: key,
+      child: child,
+    );
+  }
+
   factory SilentMoonButton.primary({
     required BuildContext context,
     required VoidCallback? onPressed,
@@ -84,7 +136,6 @@ class SilentMoonButton extends StatelessWidget {
               width: 24,
               child: CircularProgressIndicator(
                 strokeWidth: 2.5,
-
                 valueColor: AlwaysStoppedAnimation<Color>(
                   style.foregroundColor?.resolve({}) ?? Colors.white,
                 ),
