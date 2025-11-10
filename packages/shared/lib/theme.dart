@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:silent_moon_design/silent_moon.dart';
+import 'package:shared/extensions/widget_theme.dart';
+import 'package:shared/silent_moon.dart';
+import 'package:shared/widgets/scaffold.dart';
+import 'package:shared/widgets/text_field.dart';
 
 class SilentMoonTheme {
   const SilentMoonTheme._();
 
   static ThemeData get dark => _build(Brightness.dark);
+
   static ThemeData get light => _build(Brightness.light);
 
   static ThemeData _build(Brightness brightness) {
@@ -86,12 +90,45 @@ class SilentMoonTheme {
       ),
     );
 
-    final fontFamily = SilentMoon.font.fontFamily;
+    final fontFamily = SilentMoon.font.family;
+
+    final decoration = InputDecoration(
+      filled: true,
+      fillColor: SilentMoon.color.semantic.input.main,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(SilentMoon.dimension.radius.high),
+        borderSide: BorderSide.none,
+      ),
+      hintStyle: textTheme.bodyLarge?.copyWith(
+        color: SilentMoon.color.semantic.input.on,
+      ),
+      contentPadding: EdgeInsets.symmetric(
+        horizontal: SilentMoon.dimension.spacing.mid,
+        vertical: SilentMoon.dimension.spacing.mid,
+      ),
+    );
     return ThemeData(
       colorScheme: colorScheme,
       fontFamily: fontFamily,
       textTheme: textTheme,
-      extensions: const [],
+      extensions: [
+        SilentMoonWidgetThemeExtension(
+          textField: SilentMoonTextFieldTheme(
+            primary: const SilentMoonTextFieldStyle(),
+            email: SilentMoonTextFieldStyle(
+              decoration: decoration.copyWith(
+                hintText: 'Email address',
+              ),
+            ),
+            password: SilentMoonTextFieldStyle(
+              decoration: decoration.copyWith(
+                hintText: 'Password',
+              ),
+            ),
+          ),
+          scaffold: SilentMoonScaffoldTheme(primary: SilentMoonScaffoldStyle()),
+        ),
+      ],
     );
   }
 }

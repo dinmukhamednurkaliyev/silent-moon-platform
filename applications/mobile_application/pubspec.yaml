@@ -12,8 +12,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  silent_moon_design:
-    path: ../../packages/silent_moon_design
+  shared:
+    path: ../../packages/shared
 
 dev_dependencies:
   flutter_test:

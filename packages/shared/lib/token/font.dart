@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class SilentMoonFont {
   SilentMoonFont();
 
-  final String fontFamily = 'HelveticaNeue';
+  final String family = 'HelveticaNeue';
 
   final size = _FontSize();
 

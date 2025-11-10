@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_application/onboarding/onboarding_page.dart';
-import 'package:silent_moon_design/silent_moon_design.dart';
+import 'package:mobile_application/pages/onboarding.dart';
+import 'package:shared/shared.dart';
 
 class Application extends StatelessWidget {
   const Application({
