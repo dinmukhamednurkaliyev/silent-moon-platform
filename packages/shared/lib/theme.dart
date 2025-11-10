@@ -125,7 +125,16 @@ class SilentMoonTheme {
               ),
             ),
           ),
-          button: const SilentMoonButtonTheme(primary: SilentMoonButtonStyle()),
+          button: SilentMoonButtonTheme(
+            primary: SilentMoonButtonStyle(
+              backgroundColor: WidgetStateProperty.all(
+                SilentMoon.color.semantic.primary.main,
+              ),
+              foregroundColor: WidgetStateProperty.all(
+                SilentMoon.color.semantic.primary.on,
+              ),
+            ),
+          ),
           scaffold: SilentMoonScaffoldTheme(
             primary: SilentMoonScaffoldStyle(
               padding: EdgeInsets.all(SilentMoon.dimension.padding.mid),

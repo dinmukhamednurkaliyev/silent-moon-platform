@@ -15,7 +15,7 @@ class OnboardingPage extends StatelessWidget {
           SilentMoonButton.primary(
             context: context,
             onPressed: () {},
-            child: const Text('data'),
+            child: const Text('SIGN UP'),
           ),
         ],
       ),
