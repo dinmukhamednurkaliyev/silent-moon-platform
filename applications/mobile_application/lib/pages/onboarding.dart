@@ -12,6 +12,11 @@ class OnboardingPage extends StatelessWidget {
         children: [
           SilentMoonTextField.email(context: context),
           SilentMoonTextField.password(context: context),
+          SilentMoonButton.primary(
+            context: context,
+            onPressed: () {},
+            child: const Text('data'),
+          ),
         ],
       ),
     );
