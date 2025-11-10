@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shared/extensions/widget_theme.dart';
+import 'package:shared/extensions/extensions.dart';
 import 'package:shared/silent_moon.dart';
-import 'package:shared/widgets/button.dart';
-import 'package:shared/widgets/scaffold.dart';
-import 'package:shared/widgets/text_field.dart';
+import 'package:shared/widgets/widgets.dart';
 
 class SilentMoonTheme {
   const SilentMoonTheme._();
@@ -115,7 +113,7 @@ class SilentMoonTheme {
       extensions: [
         SilentMoonWidgetThemeExtension(
           textField: SilentMoonTextFieldTheme(
-            primary: const SilentMoonTextFieldStyle(),
+            primary: SilentMoonTextFieldStyle(decoration: decoration),
             email: SilentMoonTextFieldStyle(
               decoration: decoration.copyWith(
                 hintText: 'Email address',

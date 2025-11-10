@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shared/widgets/button.dart';
-import 'package:shared/widgets/scaffold.dart';
-import 'package:shared/widgets/text_field.dart';
+import 'package:shared/widgets/button/button.dart';
+import 'package:shared/widgets/scaffold/scaffold.dart';
+import 'package:shared/widgets/text_field/text_field.dart';
 
 @immutable
 class SilentMoonWidgetThemeExtension
